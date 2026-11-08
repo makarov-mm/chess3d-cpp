@@ -25,6 +25,7 @@ There is no game engine, framework or third-party library, and no model, texture
 - Soft shadows (PCSS) and contact shadows under the pieces
 - The pieces reflected in the polished board
 - HDR rendering with 4× MSAA, bloom, ACES tone mapping, vignette and dithering
+- Smooth edges everywhere: multisampling smooths the outlines of the geometry, while the edges between the squares, the joints and the inlaid lines, which the shaders draw, are filtered over each pixel; highlights widen where the surface curves within a pixel, so they do not sparkle
 - Procedural materials: wood grain, marble, turned metal, neon acrylic
 - Staunton-style pieces modeled with signed distance functions and meshed at startup (about 480,000 triangles), with a lighter version for the shadows and reflections
 - Three themes: Walnut, Marble and Neon

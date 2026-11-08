@@ -33,24 +33,26 @@ Mesh BuildSquares()
     return mesh;
 }
 
-// The frame's cross-section, swept round the board with mitred corners: a low inner lip, a flat top
-// with eased edges, and the side down to the table.
+// The frame's cross-section, swept round the board with mitred corners: a rounded inner edge rising from
+// the squares, a flat top with an eased outer edge, and the side down to the table. The inner edge is a
+// quarter circle rather than a step, so that it does not shrink to a flickering sliver when seen from afar.
 Mesh BuildFrame()
 {
     struct ProfilePoint {
         float out, y;  // outward from the playing area's edge, and height
         float nOut, nY; // normal
     };
-    constexpr std::array<ProfilePoint, 10> profile{{
+    constexpr std::array<ProfilePoint, 11> profile{{
         {0.000f, -0.002f, -1, 0},
-        {0.000f, 0.018f, -1, 0},
-        {0.004f, 0.027f, -0.62f, 0.78f},
-        {0.012f, FrameTop, 0, 1},
+        {0.000f, 0.000f, -1, 0},
+        {0.0023f, 0.0115f, -0.924f, 0.383f},
+        {0.0088f, 0.0212f, -0.707f, 0.707f},
+        {0.0185f, 0.0277f, -0.383f, 0.924f},
+        {0.030f, FrameTop, 0, 1},
         {0.585f, FrameTop, 0, 1},
         {0.607f, 0.022f, 0.62f, 0.78f},
         {0.618f, 0.006f, 0.96f, 0.28f},
         {0.62f, -0.012f, 1, 0},
-        {0.62f, TableHeight, 1, 0},
         {0.62f, TableHeight, 1, 0},
     }};
 

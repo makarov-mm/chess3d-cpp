@@ -33,6 +33,21 @@ Material DefaultMaterial(vec3 albedo, float roughness)
     return m;
 }
 
+// How much the normal turns within the pixel. Highlights are widened by it, so that they do not sparkle
+// on curved and bevelled edges (specular anti-aliasing, after Tokuyoshi and Kaplanyan). To be called where
+// all the pixels of a quad take the same path.
+float NormalSpread(vec3 N)
+{
+    vec3 dx = dFdx(N), dy = dFdy(N);
+    return min(0.5 * (dot(dx, dx) + dot(dy, dy)), 0.18);
+}
+
+float WidenRoughness(float roughness, float spread)
+{
+    float a = roughness * roughness;
+    return sqrt(sqrt(Saturate(a * a + spread)));
+}
+
 float DistributionGgx(float NoH, float roughness)
 {
     float a = roughness * roughness;
@@ -94,7 +109,7 @@ float Shadow(vec3 position, vec3 normal)
     float blockerSum = 0.0;
     float blockers = 0.0;
     for (int i = 0; i < 12; ++i) {
-        float depth = texture(uShadowDepth, p.xy + rotation * Poisson[i] * 14.0 * texelUv).r;
+        float depth = textureLod(uShadowDepth, p.xy + rotation * Poisson[i] * 14.0 * texelUv, 0.0).r;
         if (depth < p.z - bias) {
             blockerSum += depth;
             blockers += 1.0;
@@ -107,7 +122,7 @@ float Shadow(vec3 position, vec3 normal)
     float penumbra = clamp(distance * uLightColor.w / texel, 1.2, 16.0);
     float lit = 0.0;
     for (int i = 0; i < 16; ++i)
-        lit += texture(uShadowMap, vec3(p.xy + rotation * Poisson[i] * penumbra * texelUv, p.z - bias));
+        lit += textureLod(uShadowMap, vec3(p.xy + rotation * Poisson[i] * penumbra * texelUv, p.z - bias), 0.0);
     return lit / 16.0;
 }
 

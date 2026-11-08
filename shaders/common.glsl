@@ -24,6 +24,7 @@ layout(std140, binding = 1) uniform PassData {
 };
 
 float Saturate(float x) { return clamp(x, 0.0, 1.0); }
+vec2 Saturate(vec2 x) { return clamp(x, 0.0, 1.0); }
 vec3 Saturate(vec3 x) { return clamp(x, 0.0, 1.0); }
 float Luminance(vec3 c) { return dot(c, vec3(0.2126, 0.7152, 0.0722)); }
 
@@ -103,6 +104,15 @@ float Fbm(vec3 p)
         amplitude *= 0.5;
     }
     return sum;
+}
+
+// Anti-aliasing ----------------------------------------------------------------------------------
+
+// The share of a pixel that a line covers: the pixel is `pixel` wide with its middle `d` from the line's
+// middle, and the line reaches `halfWidth` to either side. Thin lines fade instead of breaking up.
+float LineCoverage(float d, float halfWidth, float pixel)
+{
+    return Saturate((min(d + 0.5 * pixel, halfWidth) - max(d - 0.5 * pixel, -halfWidth)) / pixel);
 }
 
 // Per-pixel noise for dithering and for rotating sample patterns.
