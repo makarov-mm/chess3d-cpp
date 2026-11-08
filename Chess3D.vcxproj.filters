@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{84710C13-5C74-5A79-9B8D-7EC137892AB4}</UniqueIdentifier>
+      <Extensions>cpp</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{ECD7D4F2-38C2-5CE1-AF05-AD6BDCB90DA6}</UniqueIdentifier>
+      <Extensions>h</Extensions>
+    </Filter>
+    <Filter Include="Shaders">
+      <UniqueIdentifier>{57EDA6F2-F454-5726-BFC0-499F95D3ACFE}</UniqueIdentifier>
+      <Extensions>glsl;vert;frag;comp</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{6B0A09B4-3E4F-5EC9-8F52-F30746A3BC3C}</UniqueIdentifier>
+      <Extensions>rc;ico</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\App.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BoardGeometry.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BoardView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Camera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Chess.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PieceModels.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Renderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Resources.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Settings.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Sound.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Strings.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Text.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Themes.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UiPainter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\App.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BoardGeometry.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BoardView.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Chess.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MathTypes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PieceModels.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Renderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Resources.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Settings.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Sound.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Strings.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Text.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Themes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\UiPainter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Win32.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Chess3D.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="assets\Chess3D.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shaders\background.frag">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="shaders\bloom_down.frag">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="shaders\bloom_up.frag">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="shaders\brdf.comp">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="shaders\common.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="shaders\composite.frag">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="shaders\environment.comp">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="shaders\fullscreen.vert">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="shaders\glow.frag">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="shaders\ibl_common.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="shaders\irradiance.comp">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="shaders\lighting.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="shaders\piece.frag">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="shaders\piece.vert">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="shaders\prefilter.comp">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="shaders\resolve.frag">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="shaders\shadow.frag">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="shaders\shadow.vert">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="shaders\surface.frag">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="shaders\surface.vert">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="shaders\ui.frag">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="shaders\ui.vert">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="README.md" />
+  </ItemGroup>
+</Project>
